@@ -24,7 +24,7 @@ class Planet(db.Model):
     name=db.Column(db.String(120), nullable=False)
     gravity=db.Column(db.Float, nullable=False)
     created_by_id=db.Column(db.Integer, db.ForeignKey("user.id"))
-    created_by=db.relationship("user.id")
+    created_by=db.relationship("User")
 
     def __repr__(self):
         return '<Planet %r>' % self.name
